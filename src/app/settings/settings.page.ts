@@ -23,7 +23,8 @@ export class SettingsPage implements OnInit {
   saveData(){
    this.storage.set('serveAddress', this.serveAddress);
    this.storage.set('darkMode', this.darkMode);
-     console.log(this.darkMode) 
+   console.log(this.darkMode+' '+this.serveAddress);
+   
   }
 
   getDefault(key:string){
