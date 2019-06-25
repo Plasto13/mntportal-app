@@ -5,8 +5,8 @@
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
 :root {
-    --ion-background-color:#151e29;
-    --ion-toolbar-color:#cbced2;
+    --ion-background-color:#18232e;
+    /*--ion-toolbar-color:#cbced2;*/
     --ion-text-color:#fff;
 }
 :host{
@@ -14,13 +14,13 @@
 	--color:#fff;
 }
 
-ion-menu .dark{
+ion-menu.dark{
 	--ion-background-color:#0b0e11;
 }
-ion-icon{
+ion-icon.dark{
 	--ion-text-color-rgb:#1B5794;
 }
-ion-togle {
+ion-togle.dark{
   background:#fff !important;
 }
 /*ion-content{
