@@ -12,11 +12,11 @@
 
 <ion-item>
   <ion-label position="floating">Server addres</ion-label>
-  <ion-input type="text" name="serveAddress" [(ngModel)]="serveAddress" ></ion-input>
+  <ion-input type="text" name="serveAddress" [(ngModel)]="settings.serveAddress" ></ion-input>
 </ion-item>
-<ion-item  [ngClass]="{'dark' : darkMode}">
+<ion-item>
     <ion-label>Dark Mode</ion-label>
-    <ion-toggle name="darkMode" [(ngModel)]="darkMode"></ion-toggle>
+    <ion-toggle name="darkMode" [(ngModel)]="settings.darkMode"></ion-toggle>
   </ion-item>
 
 </ion-content>

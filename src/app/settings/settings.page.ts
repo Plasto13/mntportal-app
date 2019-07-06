@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Storage } from '@ionic/storage';
-import { ToastController } from '@ionic/angular';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Settings } from 'src/app/models/settings';
+import { SettingsService } from 'src/app/services/settings.service';
 
 
 
@@ -12,44 +12,18 @@ import { NavController } from '@ionic/angular';
 })
 export class SettingsPage implements OnInit {
 
-  public serveAddress: string;
-  public darkMode: boolean;
-  constructor(private storage: Storage, public toastController: ToastController, private navCtrl:NavController) {
-      this.serveAddress = 'https://';
-      this.darkMode = false;
-      console.log('kurva');
+  public settings: Settings;
+
+  constructor(private settingsService : SettingsService) {
+
   }
   ngOnInit() {
-  	this.getDefault('darkMode');
-  	this.getDefault('serveAddress');
+  	this.settings = this.settingsService.settings;
+
+            console.log(this.settings);
   }
 
   saveData(){
-   this.storage.set('serveAddress', this.serveAddress);
-   this.storage.set('darkMode', this.darkMode);
-   console.log(this.darkMode+' '+this.serveAddress);
-   this.presentToast();
-   this.navCtrl.back();   
-  }
-
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
-      position: 'middle',
-      color:'success',
-      duration: 2000
-    });
-    toast.present();
-  }
-
-  getDefault(key:string){
-    this.storage.get(key).then((val) => {
-    if(key === 'darkMode'){
-    	this.darkMode = val;
-    }
-    else if(key === 'serveAddress') {
-    	this.serveAddress = val;
-    }
-  	});
+    this.settingsService.saveLocalSettings(this.settings)  
   }
 }

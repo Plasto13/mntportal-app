@@ -1,15 +1,15 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu class="dark">
+    <ion-menu [class.dark]="settingsService.settings.darkMode">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Menu</ion-title>
+          <ion-title [class.dark]="settingsService.settings.darkMode">{{settingsService.settings.serveAddress}}</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" >
               <ion-icon slot="start" [name]="p.icon" class="dark"></ion-icon>
               <ion-label>
                 {{p.title}}
@@ -19,6 +19,6 @@
         </ion-list>
       </ion-content>
     </ion-menu>
-    <ion-router-outlet main></ion-router-outlet>
+    <ion-router-outlet main [class.dark]="settingsService.settings.darkMode"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

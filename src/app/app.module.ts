@@ -12,6 +12,8 @@ import { HttpClientModule }    from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 
+import { SettingsService } from 'src/app/services/settings.service';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

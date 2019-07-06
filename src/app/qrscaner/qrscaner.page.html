@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+  	  <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>QrReader</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [class.show-qr-scanner]="isOn">
+ <ion-row>
+    <ion-col size-sm align-self-center>
+      <ion-button (click)="startScanner()" color="primary">Scan</ion-button>
+    </ion-col>
+  </ion-row>   
+  <ion-row>
+  </ion-row>  
+</ion-content>

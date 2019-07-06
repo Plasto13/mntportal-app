@@ -4,24 +4,27 @@
 // styles are for the entire app and not just one component. Additionally, this 
 // file can hold Sass mixins, functions, and placeholder classes to be imported 
 // and used throughout the application.
-:root {
-    --ion-background-color:#18232e;
-    /*--ion-toolbar-color:#cbced2;*/
-    --ion-text-color:#fff;
-}
-:host{
-	--ion-text-color:#fff;
-	--color:#fff;
-}
 
-ion-menu.dark{
+
+
+ion-menu.dark {
 	--ion-background-color:#0b0e11;
+    --border:1px solid #1b2836;
+}
+ion-title.dark {
+    color:#fff;
+}
+ion-item.dark {
+    color:#DDDDDD;
 }
 ion-icon.dark{
 	--ion-text-color-rgb:#1B5794;
 }
 ion-togle.dark{
   background:#fff !important;
+}
+ion-router-outlet.dark{
+    --ion-background-color:#151e29;
 }
 /*ion-content{
 
